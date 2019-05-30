@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if error %}
+{{ error }}
+<br>
+<br>
+{% endif %}
+<style>
+.password{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 2px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 4px;
+    resize: vertical;
+}
+</style>
+<div class="row">
+        <div class="side">
+            <h1>Sign Up!</h1>
+                <p>회원가입을 해주세요.</p>
+        </div>
+   <div class="main">
+       <form method="POST" action="{% url 'signup' %}" >
+       {% csrf_token %}
+        Username:
+        <br>
+        <input type="text" name="username" value="">
+        <br>
+        Password:
+        <br>
+        <input class="password" type="password" name="password1" value="">
+        <br>
+        Confirm Password:
+        <br>
+        <input class="password" type="password" name="password2" value="">
+        <br>
+        <br>
+        <input type="submit" class="btn btn-primary" value="Sign Up!">
+        </form>
+   </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>home.html</title>
+</head>
+<body>
+    {% extends 'base.html' %}
+    {% block content %}
+
+    <h1 class="p-4">자세히 보자</h1>
+    <form class="form-group" action="{% url 'create' %}" method="post">
+        {% csrf_token%}
+        <div class="p-4">
+            <h4>글 제목</h4>
+            <input class="form-control" type="text" name="title">
+        </div>
+        <div class="p-4">
+            <h4>글 내용</h4>
+            <textarea class="form-control" name="body" cols="30" rows="10"></textarea>
+            <h4 class="m-4">이미지 url</h4>
+            <input class="form-control" type="text" name="image_url"></input>
+        </div>
+        <div class="text-center p-4">
+            <input type="submit" value="write">
+        </div>
+    </form>
+
+    {% load staticfiles %}
+
+       
+        <div>
+            <h1>{{ food_post.title }}</h1>
+        </div>
+        <div>
+            <h2>{{ food_post.body }}<a href="{% url 'home' %}">돌아가기</a></h2>
+        </div>
+        <div>
+                {% if food_post.image_url != '' %}
+            <img src="{{ food_post.image_url }}" alt="이미지 파일을 불러올 수 없습니다." width="300" height="300">
+            {% endif %}
+        </div>
+          <br/>
+          <!-- <img src="{% static 'Lighthouse.jpg'%}" alt="" width="300" height="300"> -->
+   
+    {% endblock %}
+</body>
+</html>

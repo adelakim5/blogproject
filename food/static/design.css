@@ -1,0 +1,130 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family:'Jua', monospace;
+  margin: 0;
+}
+
+.header {
+  font-family: 'Merriweather', serif;
+  padding: 80px;
+  text-align: center;
+  background-color: coral;
+  color: white;
+}
+
+.header h1 {
+  font-size: 40px;
+}
+
+.navbar {
+  top:0px;
+  position: sticky;
+  overflow: hidden;
+  background-color: #333;
+
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.row {  
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.side {
+  flex: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+.main {   
+  flex: 70%;
+  background-color: white;
+  padding: 20px 40px;
+}
+
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+}
+
+@media screen and (max-width: 700px) {
+  .row {   
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width:100%;
+  }
+}
+
+/* write.html */
+
+input[type=text], textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 2px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 10px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: coral;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.comment-btn{
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: orange;
+}
+
+/* home.html */
+
+.post-content{
+  padding: 20px 0;
+  border-bottom:1px solid #666;
+}
+
+.post-content a{
+  color:#666;
+  text-decoration: none;
+}
+
+.post-content a:hover{
+  color:#444;
+  text-decoration: none;
+}
