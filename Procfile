@@ -1,0 +1,1 @@
+web: gunicorn yangwonkimproject.wsgi --log-file -
